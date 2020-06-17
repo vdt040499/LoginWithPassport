@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+
+<div class="container" style="margin-top: 30px;
+    background-color: rgb(236, 236, 236); padding: 20px 30px; border-radius: 20px;">
+    <h6>ĐĂNG KÝ THÀNH VIÊN</h6>
+    <form action="/users/signup" class="needs-validation" method="POST" novalidate>
+        <div class="col-md row">
+            <label class="col-sm-2 col-form-label" for="username">Username* </label>
+            <div class="col-sm-10">
+                <input type="text" name="username" class="form-control" id="username" value="<%= username %>">
+            </div>
+        </div>
+        <div class="col-md row">
+            <label class="col-sm-2 col-form-label" for="name">Name </label>
+            <div class="col-sm-10">
+                <input type="text" name="name" class="form-control" id="name" value="<%= name %>">
+            </div>
+        </div>
+        <div class="col-md row">
+            <label class="col-sm-2 col-form-label" for="email">Email* </label>
+            <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" id="email" value="<%= email %>">
+            </div>
+        </div>
+        <div class="col-md row">
+            <label class="col-sm-2 col-form-label" for="password">Password *</label>
+            <div class="col-sm-10">
+                <input type="password" name="password" class="form-control" id="password" value="">
+            </div>
+        </div>
+        <div class="col-md row">
+            <label class="col-sm-2 col-form-label" for="repass">Confirm Password*</label>
+            <div class="col-sm-10">
+                <input type="password" name="repass" class="form-control" id="repass" value="">
+            </div>
+        </div>
+        <div class="col-md row">
+            <label class="col-sm-2 col-form-label" for="phone">Phone number</label>
+            <div class="col-sm-10">
+                <input type="tel" class="form-control" name="phone" id="phone" value="<%= phone %>">
+                <p style="margin-top: 10px;">*Required field</p>
+            </div>
+        </div>
+        <button style="margin-top: 20px; text-align: center;" class="btn btn-primary btn-lg btn-block"
+            type="submit">Register</button>
+    </form>
+    <script src="/javascripts/signup.js"></script>
+</div>
+
+<% include ../partials/footer %>
