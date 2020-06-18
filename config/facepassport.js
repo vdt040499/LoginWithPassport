@@ -10,7 +10,8 @@ module.exports = (passport) => {
         // callbackURL: "http://localhost:3000/auth/fb/cb"
         clientID: "284819299328472",
         clientSecret: "a57fb8321f7d78e06bca7905dc9166a7",
-        callbackURL: "http://localhost:3000/auth/fb/cb"
+        callbackURL: "http://localhost:3000/auth/fb/cb",
+        profileFields: ["email", "name", "displayName", "picture.width(200).height(200)"]
       },
       (accessToken, refreshToken, profile, done) => {
         console.log(profile);
@@ -24,7 +25,8 @@ module.exports = (passport) => {
               const user = new User ({
                 fbid: profile._json.id,
                 name: profile._json.name,
-                username: profile._json.name.replace(/\s+/g, '-').toLowerCase()
+                username: profile._json.name.replace(/\s+/g, '-').toLowerCase(),
+                image: profile.photos[0].value
               });
 
               user.save((err) => {

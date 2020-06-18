@@ -86,3 +86,8 @@ h6{
   background-color: #f8d7da;
   border-color: #f5c6cb;
 }
+
+.google {
+  background: rgb(12,136,187);
+  background: linear-gradient(90deg, rgba(12,136,187,1) 0%, rgba(241,74,66,0.9836309523809523) 15%, rgba(143,146,7,0.7595413165266106) 33%, rgba(5,95,178,0.8603816526610644) 54%, rgba(3,217,13,0.7371323529411764) 79%, rgba(255,0,0,1) 100%);
+}
