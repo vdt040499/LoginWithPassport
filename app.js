@@ -86,6 +86,9 @@ app.use(function (req, res, next) {
 //Passport config
 require('./config/passport')(passport);
 
+//Facebook passport config
+require('./config/facepassport')(passport);
+
 //Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -96,6 +99,18 @@ app.locals.errors = null;
 app.get('*', (req, res, next) => {
   res.locals.user = req.user || null;
   next();
+});
+
+// Use the FacebookStrategy within Passport.
+
+
+// Passport session setup.
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  
 });
 
 //Set routes
