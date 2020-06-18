@@ -12,4 +12,11 @@ router.get('/auth/fb', passport.authenticate('facebook',{scope: ['email']}));
 
 router.get('/auth/fb/cb', passport.authenticate('facebook', { successRedirect : '/', failureRedirect: '/users/login' }));
 
+
+//Login with google
+router.get('/auth/gg', passport.authenticate('google',{scope: ['profile', 'email']}));
+
+router.get('/auth/gg/cb', passport.authenticate('google', { successRedirect : '/', failureRedirect: '/users/login' }));
+
+
 module.exports = router;

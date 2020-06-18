@@ -89,6 +89,9 @@ require('./config/passport')(passport);
 //Facebook passport config
 require('./config/facepassport')(passport);
 
+//Google passport config
+require('./config/ggpassport')(passport);
+
 //Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
